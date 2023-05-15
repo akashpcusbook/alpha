@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Alpha\Parsers;
+namespace App\Tusker\Parsers;
 
 use Dotenv\Dotenv;
 

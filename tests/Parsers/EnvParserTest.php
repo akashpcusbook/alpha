@@ -2,7 +2,7 @@
 
 namespace App\Tests;
 
-use App\Alpha\Parsers\EnvParser;
+use App\Tusker\Parsers\EnvParser;
 use PHPUnit\Framework\TestCase;
 
 class EnvParserTest extends TestCase

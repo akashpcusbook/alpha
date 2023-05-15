@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "App\\Alpha\\": "src/"
+            "App\\Tusker\\": "src/"
         },
         "files": [
             "helper/common.php"

@@ -2,7 +2,7 @@
 
 namespace App\Tests\Containers;
 
-use App\Alpha\Containers\ObjectContainer;
+use App\Tusker\Containers\ObjectContainer;
 use PHPUnit\Framework\TestCase;
 
 class ObjectContainerTest extends TestCase

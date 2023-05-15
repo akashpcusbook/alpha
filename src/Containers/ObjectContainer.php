@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Alpha\Containers;
+namespace App\Tusker\Containers;
 
 class ObjectContainer
 {
