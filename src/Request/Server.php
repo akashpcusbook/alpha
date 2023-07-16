@@ -9,7 +9,7 @@ class Server
      *
      * @return array<mixed, mixed>
      */
-    public static function getServerDetails(): array
+    public static function all(): array
     {
         return $_SERVER;
     }
