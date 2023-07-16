@@ -129,7 +129,6 @@ class HttpResponse
         self::HTTP_FAILED_DEPENDENCY => 'failed dependency',
         self::HTTP_TOO_EARLY => 'too early',
         self::HTTP_UPGRADE_REQUIRED => 'upgrade required',
-        self::HTTP_PRECONDITION_REQUIRED => 'precondition required',
         self::HTTP_TOO_MANY_REQUEST => 'too many request',
         self::HTTP_REQUEST_HEADER_FIELDS_TOO_LARGE => 'request header fields too large',
         self::HTTP_UNAVAILABLE_FOR_LEGAL_REASONS => 'unavailable for legal reasons',
@@ -147,6 +146,15 @@ class HttpResponse
         self::HTTP_NETWORK_AUTHENTICATION_REQUIRED => 'network authentication required',
     ];
 
+    /**
+     * get json response
+     *
+     * @param array<mixed, mixed> $data
+     * @param string $message
+     * @param int $status
+     * @param array<mixed, mixed> $headers
+     * @return string
+     */
     public static function json(array $data, string $message = '', int $status = self::HTTP_OK, array $headers = []): string
     {
         return self::custom(
@@ -162,6 +170,15 @@ class HttpResponse
         );
     }
 
+    /**
+     * get xml response data
+     *
+     * @param array<mixed, mixed> $data
+     * @param string $message
+     * @param int $status
+     * @param array<mixed, mixed> $headers
+     * @return string
+     */
     public static function xml(array $data, string $message = '', int $status = self::HTTP_OK, array $headers = []): string
     {
         return self::custom(
@@ -177,6 +194,15 @@ class HttpResponse
         );
     }
 
+    /**
+     * create custom response
+     *
+     * @param string $type
+     * @param array<mixed, mixed> $data
+     * @param int $status
+     * @param array<mixed, mixed> $headers
+     * @return string
+     */
     public static function custom(string $type, array $data, int $status = self::HTTP_OK, array $headers = []): string
     {
         HttpHeader::set(

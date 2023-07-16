@@ -11,7 +11,7 @@ class HttpHeader
         header($key.': '.$value, $replace);
     }
 
-    public static function cors()
+    public static function cors(): void
     {
         self::set(
             'Access-Control-Allow-Origin',
