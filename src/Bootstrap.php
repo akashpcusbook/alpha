@@ -12,6 +12,7 @@ use Tusker\Framework\Request\Server;
 use Tusker\Framework\Router\Route;
 use Tusker\Framework\Router\RouteResolver;
 use Tusker\Framework\Support\Csrf;
+use Tusker\Framework\Support\Language;
 
 class Bootstrap
 {
@@ -26,6 +27,7 @@ class Bootstrap
 
         $objectManager->add($this::class);
         $objectManager->add(Env::class);
+        $objectManager->add(Language::class);
         $objectManager->add(Server::class);
         $objectManager->add(HttpRequest::class);
         $objectManager->add(Csrf::class);
