@@ -2,6 +2,7 @@
 
 use Tusker\Framework\Bootstrap;
 use Tusker\Framework\Manager\Object\ObjectManager;
+use Tusker\Framework\Parser\Xml;
 use Tusker\Framework\Request\Server;
 use Tusker\Framework\Support\Csrf;
 
@@ -34,7 +35,7 @@ function app_name(): string
  */
 function env(string $key, string $default = ''): string
 {
-    return $_ENV[$key] ?? $default; 
+    return $_ENV[$key] ?? $default;
 }
 
 /**
@@ -55,7 +56,7 @@ function getObjectManager(): ObjectManager
  */
 function app_path(string $path = ''): string
 {
-    return getcwd().'/'.$path;
+    return getcwd() . '/' . $path;
 }
 
 /**
@@ -104,8 +105,7 @@ function framework(): Bootstrap
  */
 function config(string $file)
 {
-    return require_once(config_path().'/'.$file.'.php');
-
+    return require_once(config_path() . '/' . $file . '.php');
 }
 
 /**
@@ -139,4 +139,13 @@ function base64UrlEncode(string $text): string
     );
 }
 
-
+/**
+ * converts array to xml
+ *
+ * @param array<mixed, mixed> $datas
+ * @return string
+ */
+function arrayToXml(array $datas): string
+{
+    return (new Xml($datas))->getXml();
+}
