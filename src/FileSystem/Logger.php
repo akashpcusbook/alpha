@@ -18,11 +18,11 @@ class Logger
     
     public function __construct(private FileWriter $fileWriter, private string $fileName) {}
 
-    public function log(string $text, string $level = self::LEVEL_INFO)
+    public function log(string $text, string $level = self::LEVEL_INFO): void
     {
         $tabSpace = '    ';
         $formatedText = '[' . Date::now() . ']';
-        $formatedText .= $tabSpace. '['. in_array($level, array_keys(self::LEVELS)) ? self::LEVELS[$level] : 'info' . ']';
+        $formatedText .= $tabSpace. '['. self::LEVELS[$level] . ']';
         $formatedText .= $tabSpace. $text;
 
         $this->fileWriter->setFilePath(app_path('var/logs/'. $this->fileName));
