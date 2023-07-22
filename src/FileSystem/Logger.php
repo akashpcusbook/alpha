@@ -27,7 +27,7 @@ class Logger
 
         $this->fileWriter->setFilePath(app_path('var/logs/'. $this->fileName));
         $this->fileWriter->open();
-        $this->fileWriter->write($text);
+        $this->fileWriter->write($formatedText.PHP_EOL);
         $this->fileWriter->close();
     }
 }
