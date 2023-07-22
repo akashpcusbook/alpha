@@ -5,6 +5,7 @@ use Tusker\Framework\Manager\Object\ObjectManager;
 use Tusker\Framework\Parser\Xml;
 use Tusker\Framework\Request\Server;
 use Tusker\Framework\Support\Csrf;
+use Tusker\Framework\Support\Language;
 
 /**
  * return app version
@@ -148,4 +149,20 @@ function base64UrlEncode(string $text): string
 function arrayToXml(array $datas): string
 {
     return (new Xml($datas))->getXml();
+}
+
+/**
+ * returns translated string
+ *
+ * @param string $key
+ * @param string ...$values
+ * @return void
+ */
+function __(string $key, string ...$values)
+{
+    /**
+     * @var Language $lang
+     */
+    $lang = getObjectManager()->get(Language::class);
+    return $lang->translate($key, ...$values);
 }
