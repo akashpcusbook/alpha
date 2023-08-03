@@ -12,6 +12,7 @@ use Tusker\Framework\Request\Server;
 use Tusker\Framework\Router\Route;
 use Tusker\Framework\Router\RouteResolver;
 use Tusker\Framework\Support\Csrf;
+use Tusker\Framework\Support\File;
 use Tusker\Framework\Support\Language;
 
 class Bootstrap
@@ -32,6 +33,7 @@ class Bootstrap
         $objectManager->add(HttpRequest::class);
         $objectManager->add(Csrf::class);
         $objectManager->add(Email::class);
+        $objectManager->add(File::class);
         $objectManager->add(Route::class);
         $objectManager->add(RouteResolver::class);
 
