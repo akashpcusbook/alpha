@@ -4,7 +4,7 @@ namespace Tusker\Framework\Support;
 
 class System
 {
-    public static function upload($from, $to): bool
+    public static function upload(string $from, string $to): bool
     {
         return move_uploaded_file($from, $to);
     }
