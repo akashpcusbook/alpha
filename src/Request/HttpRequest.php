@@ -13,13 +13,13 @@ class HttpRequest
     
         if (!empty($requests)) {
             foreach ($requests as $key => $request) {
-                $this->{$key} = $request;
+                $this->{$key} = htmlentities($request);
             }
         }
     
         if (!empty($_REQUEST)) {
             foreach ($_REQUEST as $key => $request) {
-                $this->{$key} = $request;
+                $this->{$key} = htmlentities($request);
             }
         }
     }
